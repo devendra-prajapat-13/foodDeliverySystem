@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= product.name %> - Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #f9f9f9;
+    }
+
+    .product-card {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 25px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .product-image {
+      border-radius: 12px;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .product-price {
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: #28a745;
+    }
+
+    .rating {
+      color: #f39c12;
+    }
+
+    .order-btn {
+      background-color: #007bff; /* blue */
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+
+    .order-btn:hover {
+      background-color: #0056b3;
+      color: #ffffff;
+    }
+
+    .section-heading {
+      background: linear-gradient(to right, #ffcc70, #ffb347);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .owner-intro {
+  /* background: linear-gradient(to right, #ffe0b2, #fff3e0); */
+  background-color: transparent;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.owner-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ff9800;
+}
+
+  </style>
+</head>
+<body>
+  <%- include("__header.ejs") %>
+
+  <div class="container mt-5">
+  <div class="owner-intro d-flex flex-column flex-md-row align-items-center p-4 mb-4">
+    <!-- <img src="/devendra.png" alt="Restaurant Owner" class="owner-photo me-md-4 mb-3 mb-md-0" /> -->
+    <div>
+      <h2 class="text-dark mb-2"><b>Welcome To Order Section</b></h2>
+      <h4>You Can Get All The Things From One Place </h4>
+      <p class="mb-0 text-muted">
+        Hello! I am <strong>Devendra Prajapat </strong>, the proud owner of this place.  
+        Our restaurant is known for fresh ingredients, traditional recipes, and homely vibes.  
+        We believe in serving food that not only fills your stomach but also touches your heart.  
+        Thank you for visiting us!
+      </p>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container mt-4">
+    <div class="section-heading">
+      <h2 class="text-dark mb-0">Explore : "<%= product.name %>" in Detail</h2>
+    </div>
+  </div>
+
+  <div class="container mb-5">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-md-6">
+        <div class="product-card h-100">
+          <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image" height="450" />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="product-card h-100 d-flex flex-column">
+          <h2 class="mb-3" style="color:darkorange"><%= product.name %></h2>
+          <hr />
+          <p><b>Prep Time:</b> <%= product.prepTimeMinutes %> minutes</p>
+          <p><b>Cook Time:</b> <%= product.cookTimeMinutes %> minutes</p>
+          <p><b>Calories:</b> <%= product.caloriesPerServing %> kcal</p>
+          <p><b>Cuisine:</b> <%= product.cuisine %></p>
+          <p><b>Reviews:</b> <%= product.reviewCount %> people reviewed</p>
+          <p><b>Rating:</b> <span class="rating"><%= product.rating %> / 5</span></p>
+          <p><b>Price:</b> <span class="product-price"><%= product.price %> Rs.</span></p>
+
+          
+          <a href="/product/buy-now/<%= product.id %>" class="order-btn mt-4">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("__footer.ejs") %>
+</body>
+</html>
