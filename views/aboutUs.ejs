@@ -1,69 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About Us - SpicyGrill</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>About Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      background: linear-gradient(to right, #fff0f5, #ffe4e1);
+      background-color: #fffaf5;
       font-family: 'Segoe UI', sans-serif;
       color: #333;
     }
 
-    .about-wrapper {
-      max-width: 900px;
+    .about-container {
+      max-width: 960px;
       margin: 60px auto;
-      background-color: #fff;
       padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
     }
 
-    .about-title {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #ff3e3e;
+    h1 {
       text-align: center;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      color: #e74c3c;
+      margin-bottom: 10px;
     }
 
-    .tagline {
+    .subtitle {
       text-align: center;
       font-size: 1.2rem;
-      color: #555;
+      color: #666;
       margin-bottom: 40px;
     }
 
-    .about-section h3 {
-      color: #dc3545;
+    .section-title {
+      font-size: 1.4rem;
+      color: #c0392b;
       margin-top: 30px;
-    }
-
-    .about-section p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .highlight {
       font-weight: bold;
-      color: #ff5722;
     }
 
-    .features {
-      margin-top: 20px;
-      padding-left: 0;
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-top: 10px;
     }
 
-    .features li {
-      list-style: none;
-      padding: 8px 0;
+    ul {
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
       font-size: 1.05rem;
-    }
-
-    .features li::before {
-      content: "🍽️";
-      margin-right: 10px;
     }
 
     .closing {
@@ -76,41 +67,40 @@
   </style>
 </head>
 <body>
-   <%-include("__header.ejs")%>
-  <div class="about-wrapper">
-    <h1 class="about-title">SpicyGrill</h1>
-    <p class="tagline">Where hunger meets happiness 🍕</p>
+  <%- include("__header.ejs") %>
 
-    <div class="about-section">
-      <p>
-        At <span class="highlight">SpicyGrill</span>, we believe food is not just a need — it's an emotion. Born from the heart of food lovers, we started with a dream: to bring warm, delicious meals to your door, exactly when you need them the most.
-      </p>
+  <div class="about-container">
+    <h1>About Us</h1>
+    <p class="subtitle">Delivering meals, connecting hearts.</p>
 
-      <h3>Our Story</h3>
-      <p>
-        It all began with a late-night craving and an idea. What if comfort food could arrive with just one click? From home kitchens to your dining table, <span class="highlight">SpicyGrill</span> connects you to chefs, restaurants, and flavors that make life tasty.
-      </p>
+    <p>
+      We are a team of food lovers, tech enthusiasts, and logistics experts working together to simplify food delivery. Whether you're craving something spicy, sweet, or healthy — we aim to get it to your doorstep quickly and reliably.
+    </p>
 
-      <h3>What Makes Us Special?</h3>
-      <ul class="features">
-        <li>Fresh, hot food delivered lightning fast</li>
-        <li>Local chefs bringing homemade goodness</li>
-        <li>Curated dishes that make your taste buds dance</li>
-        <li>Smart tracking – always know where your food is</li>
-        <li>Round-the-clock customer care, because we care ❤️</li>
-      </ul>
+    <h3 class="section-title">Our Purpose</h3>
+    <p>
+      Life is busy, and meals shouldn't be a hassle. Our goal is to make ordering food as easy as a few taps — giving you back time to enjoy what matters most.
+    </p>
 
-      <h3>Our Mission</h3>
-      <p>
-        To serve joy on every plate, support local kitchens, and make food delivery simple, soulful, and satisfying.
-      </p>
+    <h3 class="section-title">What We Offer</h3>
+    <ul>
+      <li>Quick access to nearby restaurants and home kitchens</li>
+      <li>Live order tracking and reliable delivery times</li>
+      <li>Friendly support to assist you at every step</li>
+      <li>Secure payments and order history at your fingertips</li>
+    </ul>
 
-      <div class="closing">
-        Thank you for making us part of your meals.<br>
-        Your cravings, our responsibility – <span class="highlight">SpicyGrill</span> is always on the way! 🚀
-      </div>
+    <h3 class="section-title">Why It Matters</h3>
+    <p>
+      Food isn’t just fuel — it’s a part of our culture, our families, our comfort. We believe great meals can brighten days, bring people together, and create lasting memories.
+    </p>
+
+    <div class="closing">
+      Thank you for choosing us.<br>
+      We’re here to serve — one meal at a time.
     </div>
   </div>
-    <%-include("__footer.ejs")%>
+
+  <%- include("__footer.ejs") %>
 </body>
 </html>

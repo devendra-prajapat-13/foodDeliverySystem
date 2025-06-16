@@ -3,72 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Order Confirmation</title>
     <style>
       body {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
         text-align: center;
-        padding-top: 100px;
+        padding-top: 50px;
       }
 
       .box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background-color: white;
         padding: 30px;
         margin: auto;
-        width: 500px;
-        height: 300px;
+        width: 600px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
       }
 
       h2 {
         color: green;
-        font-size: 50px;
-        margin-bottom: 20px;
+        font-size: 40px;
+        margin-bottom: 10px;
       }
 
       p {
         color: #333;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .bill {
+        text-align: left;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      .bill-title {
         font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+        text-align: center;
       }
-      .content{
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           flex-direction: column;
-           line-height: 20px;
+
+      .label {
+        font-weight: bold;
       }
-      /* #OKButton{
-          width: 130px;
-          height: 40px;
-          border: 2px  solid black; 
-          background-color: green;
-          color: white;
-          font-weight: bold;
-      } */
-      #BillDiv{
-         /* display: flex;
-         justify-content: center;
-         align-items: center;
-         border: 2px solid black;
-         flex-direction: column; */
+
+      .cod-button {
+        margin-top: 30px;
+      }
+
+      .cod-button button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .cod-button button:hover {
+        background-color: #218838;
       }
     </style>
   </head>
   <body>
     <div class="box">
-      <div class="content">
-        <h2>Congratulations!</h2>
-        <p>Your order has been reocoreded.</p>
+      <h2>Congratulations!</h2>
+      <p>Your order has been recorded.</p>
+
+      <div class="bill">
+        <div class="bill-title">Your Bill</div>
+        <div><span class="label">Name:</span> Devendra Prajapat</div>
+        <div><span class="label">Address:</span> 123 MG Road, Indore, MP</div>
+        <div><span class="label">Email:</span> devendra@example.com</div>
+        <div><span class="label">Phone No:</span> +91-9876543210</div>
+        <div><span class="label">Total Price:</span> ₹599</div>
+        <div><span class="label">GST No:</span> GSTIN29AABCU9603R1Z2</div>
       </div>
 
-       <div id="BillDiv">
-            <h4>Your Bill </h4>
-       </div>
+      <div class="cod-button">
+        <form action="/" method="GET">
+          <label for=""><b>Pay Bill : </b></label>
+          <button type="submit">Cash on Delivery</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>

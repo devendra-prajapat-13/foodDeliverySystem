@@ -60,7 +60,19 @@ class Product{
             });
         });
     }
-
+   
+  static findByName(productName) {
+    return new Promise((resolve, reject) => {
+      pool.getConnection((err, con) => {
+        if (err) return reject(err);
+        const sql = "SELECT * FROM product WHERE name = ?";
+        con.query(sql, [productName], (err, result) => {
+          con.release();
+          err ? reject(err) : resolve(result);
+        });
+      });
+    });
+  }
     
 }
 

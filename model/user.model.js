@@ -46,7 +46,7 @@ class User {
 
   create() {
     return new Promise((resolve, reject) => {
-      pool.getConnection((err, con) => {
+      pool.getConnection((err, con) => { 
         if (err) return reject(err);
 
         const sql = "INSERT INTO users(name, email, password) VALUES (?, ?, ?)";
