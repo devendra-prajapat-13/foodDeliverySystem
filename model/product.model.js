@@ -43,7 +43,7 @@ class Product{
                con.query(sql,(err,result)=>{
                 con.release();
                 err ? reject(err) : resolve(result);
-               })
+               }) 
             });
         });
     }
