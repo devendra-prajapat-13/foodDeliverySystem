@@ -1,4 +1,5 @@
-import Product from "../model/Product.model.js";
+import Product from "../model/product.model";
+
 export const indexPage = (req, res, next) => {
   return res.render("index.ejs",{currentUser: req.session.currentUser,isLoggedIn: req.session.isLoggedIn});
 };
