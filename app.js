@@ -5,6 +5,8 @@ import userRouter from "./routes/user.route.js";
 import ProductRouter from "./routes/product.route.js";
 import OrderRouter from "./routes/order.route.js";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
+dotenv.config();
 import session from "express-session";
 const app = express();
 
@@ -16,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(session({
-    secret: 'fsfjkljsfrjweirweovmvnmbvxmbvmxcvrweoruweo'
+    secret:process.env.secrateKey
 }));
 
 app.use("/", indexRouter);
