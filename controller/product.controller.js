@@ -1,4 +1,4 @@
-import Product from "../model/product.model.js";
+import Product from "../model/Product.model.js";
 
 export const saveInBulk = async (request,response,next)=>{
    try{ 
